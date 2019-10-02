@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.godwin.myapplication.customview.CustomConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:transitionName="cl"
+    app:endOffset="40dp"
+    app:max="100"
+    app:progressColor="@color/offBlue"
+    app:startOffset="40dp"
+    tools:context=".SongDetailsFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFav"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:transitionName="fav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_star_black_24dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivThumbNail"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="centerCrop"
+        android:transitionName="thumbNail"
+        app:layout_constraintEnd_toStartOf="@+id/ivStatic"
+        app:layout_constraintHeight_max="120dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivFav"
+        app:layout_constraintWidth_max="120dp"
+        app:srcCompat="@drawable/sample1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivStatic"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        android:transitionName="thumbNail"
+        app:layout_constraintBottom_toBottomOf="@+id/ivThumbNail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="120dp"
+        app:layout_constraintStart_toEndOf="@+id/ivThumbNail"
+        app:layout_constraintTop_toTopOf="@+id/ivThumbNail"
+        app:layout_constraintWidth_max="120dp"
+        app:srcCompat="@drawable/sample9" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibPrev"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/blue"
+        android:src="@drawable/ic_skip_previous_white_24dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibPlayPause"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivThumbNail" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibPlayPause"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@color/blue"
+        android:src="@drawable/ic_play_arrow_white_24dp"
+        android:transitionName="playPause"
+        app:layout_constraintEnd_toStartOf="@+id/ibNext"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibPrev"
+
+        app:layout_constraintTop_toTopOf="@+id/ibPrev" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibNext"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@color/blue"
+        android:src="@drawable/ic_skip_next_white_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibPlayPause"
+        app:layout_constraintTop_toTopOf="@+id/ibPlayPause" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/sbDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:max="100"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:progressTint="@color/blue"
+        android:thumbTint="@color/blue"
+        android:transitionName="sb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibPlayPause" />
+</com.godwin.myapplication.customview.CustomConstraintLayout>

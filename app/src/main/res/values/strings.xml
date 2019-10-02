@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UI Transition</string>
+    <string name="songList">Song List</string>
+    <string name="songDetails">Song Details</string>
+</resources>

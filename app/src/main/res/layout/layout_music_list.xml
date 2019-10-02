@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.godwin.myapplication.customview.CustomConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clMusicItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    app:endOffset="8dp"
+    app:max="100"
+    app:progressColor="@color/offBlue"
+    app:startOffset="90dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivThumbNail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:transitionName="thumbNail"
+        app:layout_constraintBottom_toBottomOf="@+id/sbDuration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMusicName"
+        app:srcCompat="@drawable/sample1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMusicName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:textSize="@dimen/name_common_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivThumbNail"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="El Camino" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvArtist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:textSize="@dimen/artist_name_size"
+        app:layout_constraintEnd_toEndOf="@+id/tvMusicName"
+        app:layout_constraintStart_toStartOf="@+id/tvMusicName"
+        app:layout_constraintTop_toBottomOf="@+id/tvMusicName"
+        tools:text="Snow Patrol" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivFavourite"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:transitionName="fav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_star_black_24dp" />
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/sbDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:max="100"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progress="50"
+        android:progressTint="@color/blue"
+        android:thumb="@null"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivThumbNail"
+        app:layout_constraintTop_toBottomOf="@+id/tvArtist" />
+</com.godwin.myapplication.customview.CustomConstraintLayout>

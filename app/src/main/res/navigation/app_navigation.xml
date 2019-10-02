@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/songList">
+    <fragment
+        android:id="@+id/songList"
+        android:name="com.godwin.myapplication.SongListFragment"
+        android:label="@string/songList"
+        tools:layout="@layout/song_list_fragment">
+        <action
+            android:id="@+id/songAction"
+            app:destination="@+id/songDetails" />
+        <argument
+            android:name="song"
+            app:argType="com.godwin.myapplication.model.Song" />
+    </fragment>
+    <fragment
+        android:id="@+id/songDetails"
+        android:name="com.godwin.myapplication.SongDetailsFragment"
+        android:label="@string/songDetails"
+        tools:layout="@layout/song_details_fragment" />
+</navigation>
